@@ -1,0 +1,40 @@
+[
+  {
+    "type": "container",
+    "title": "MySql 5.7",
+    "description": "MySql 5.7",
+    "categories": ["databases"],
+    "platform": "linux",
+    "logo": "https://cloudinovasi.id/assets/img/logos/mysql.png",
+    "image": "mysql:5.7",
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password"
+      }
+    ],
+    "ports": [
+      "3306/tcp"
+    ],
+    "volumes": ["/var/lib/mysql"]
+  },
+  {
+    "type": "container",
+    "title": "MySql 5.5",
+    "description": "MySql 5.5",
+    "categories": ["databases"],
+    "platform": "linux",
+    "logo": "https://cloudinovasi.id/assets/img/logos/mysql.png",
+    "image": "mysql:5.5",
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password"
+      }
+    ],
+    "ports": [
+      "3306/tcp"
+    ],
+    "volumes": ["/var/lib/mysql"]
+  }
+]
