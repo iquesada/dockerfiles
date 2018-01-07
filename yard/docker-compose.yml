@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  yard:
+    container_name: yard
+    build:
+      context: .
+    image: ruby:latest
+    ports:
+      - 80:80
+    volumes:
+      - /Users/iquesada/.ssh:/root/.ssh
+
