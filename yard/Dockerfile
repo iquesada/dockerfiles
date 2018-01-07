@@ -7,8 +7,8 @@ RUN apt-get -qq update && apt-get -qq install openssh-client nginx && apt-get cl
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apache2-utils
 
 # SSH KEY
-RUN mkdir /root/.ssh
-RUN touch /root/.ssh/known_hosts
+#RUN mkdir /root/.ssh
+#RUN touch /root/.ssh/known_hosts
 RUN rm -f /etc/nginx/sites-enabled/default
 RUN ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 
