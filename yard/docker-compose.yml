@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   yard:
@@ -8,6 +8,4 @@ services:
     image: ruby:latest
     ports:
       - 80:80
-    volumes:
-      - /Users/iquesada/.ssh:/root/.ssh
 
