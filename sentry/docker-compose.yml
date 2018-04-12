@@ -1,0 +1,49 @@
+version: '2'
+
+volumes:
+  standalone_data:
+  standalone_redis_data:
+
+services:
+  pg94:
+    image: postgres:9.4
+    restart: always
+    volumes:
+            - standalone_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123456
+    ports:
+      -  5432:5432
+  adminer:
+    image: adminer
+    container_name: adminer_pg
+    restart: always
+    ports:
+      - 8082:8080
+
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - standalone_redis_data:/data
+    ports:
+      - 6379:6379
+
+  sentry:
+    image: sentry
+    container_name: sentry
+    environment:
+       SENTRY_SECRET_KEY: /xQD>n9knnU&
+       SENTRY_REDIS_HOST: redis
+       SENTRY_REDIS_PORT: 6379
+       SENTRY_POSTGRES_HOST: pg94
+       SENTRY_POSTGRES_PORT: 5432
+       SENTRY_DB_NAME: sentry
+       SENTRY_DB_USER: postgres
+       SENTRY_DB_PASSWORD: dellanera
+    restart: always
+    ports: 
+      - 8090:9000
+    links:
+      - pg94:postgres
+      - redis:redis 
