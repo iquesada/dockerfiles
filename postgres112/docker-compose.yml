@@ -5,9 +5,9 @@ volumes:
 
 services:
   postgres:
-    container_name: postgres102
-    hostname: postgres102
-    image: postgres:10.2
+    container_name: postgres112
+    hostname: postgres112
+    image: postgres:11.2
     ports:
       - "5432:5432"
     volumes:
