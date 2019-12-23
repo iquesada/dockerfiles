@@ -7,4 +7,3 @@ services:
     image: couchdb:2.1
     ports:
       - "5984:5984"
-    restart: always
