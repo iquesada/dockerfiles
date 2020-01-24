@@ -15,7 +15,3 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
       MYSQL_ROOT_HOST: "%"
-  adminer:
-    image: adminer
-    ports:
-      - 8081:8080
